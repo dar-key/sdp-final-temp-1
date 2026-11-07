@@ -16,7 +16,6 @@
 
   <main>
 
-    <!-- SCREEN 1: DOCK (owner: P1) -->
     <section id="screen-dock" class="screen active">
       <div class="dock-grid">
 
@@ -68,6 +67,7 @@
             <label class="choice"><input type="checkbox" name="upgrade" value="THERMAL"> Thermal plating: more hull, resists heat</label>
             <label class="choice"><input type="checkbox" name="upgrade" value="FLOOD"> Floodlight: brighter light</label>
             <label class="choice"><input type="checkbox" name="upgrade" value="DEPTH"> Depth module: dive deeper</label>
+            <label class="choice"><input type="checkbox" name="upgrade" value="SONAR"> Sonar: see what is on each route</label>
           </fieldset>
 
           <button id="launch" type="button" class="primary">Launch</button>
@@ -94,7 +94,6 @@
       </div>
     </section>
 
-    <!-- SCREEN 2: DIVE (owner: P2) -->
     <section id="screen-dive" class="screen">
 
       <div class="box hud">
@@ -104,6 +103,11 @@
           <div class="bar" id="bar-oxygen"><i></i></div></div>
         <div class="grow">Hull <span id="hud-hull-num">-</span>
           <div class="bar" id="bar-hull"><i></i></div></div>
+      </div>
+
+      <div class="box" id="routes-box" hidden>
+        <h2>Choose a route</h2>
+        <div class="actions" id="routes"></div>
       </div>
 
       <div class="box">
@@ -124,7 +128,6 @@
       </div>
     </section>
 
-    <!-- SCREEN 3: DEBRIEF (owner: P3) -->
     <section id="screen-debrief" class="screen">
       <div class="box report">
         <h2>Debrief</h2>
@@ -152,16 +155,6 @@
     </section>
 
   </main>
-
-  <!-- Developer helper: jump between screens without the backend.
-       Delete this block before the final demo. -->
-  <footer class="devbar">
-    Dev:
-    <button type="button" data-go="dock">dock</button>
-    <button type="button" data-go="dive">dive</button>
-    <button type="button" data-go="debrief">debrief</button>
-    <button type="button" id="dev-fake">fill with fake data</button>
-  </footer>
 
 </div>
 <script src="app.js"></script>
